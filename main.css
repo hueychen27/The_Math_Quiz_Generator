@@ -1,0 +1,21 @@
+body {
+    box-sizing: border-box;
+    background-color: black;
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    background-color: rgba(25, 205, 230, 0.75);
+    top: 0;
+    left: 50%;
+}
+
+#container {
+    position: absolute;
+    background-color: antiquewhite;
+    transform: translate(50vw, 50vh);
+    padding: 40px;
+    border-radius: 10px;
+
+}
