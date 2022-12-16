@@ -24,7 +24,11 @@ function generateEquation() {
     if (numbers.operator == 1) numbers.answer = numbers.num + numbers.num2;
     if (numbers.operator == 2) numbers.answer = numbers.num - numbers.num2;
     if (numbers.operator == 3) numbers.answer = numbers.num * numbers.num2;
-    if (numbers.operator == 4) numbers.answer = (numbers.num / numbers.num2).toPrecision(2);
+    if (numbers.operator == 4) {
+        let tmp = numbers.num / numbers.num2;
+        if (tmp % 1 != 0) numbers.answer = numbers.num / numbers.num2;
+        if (parseFloat(tmp) > 0) numbers.answer = (numbers.num / numbers.num2).toPrecision(2);
+    }
     numbers.operator = mapping[`${numbers.operator}`];
     numbers.equation = `${numbers.num} ${numbers.operator} ${numbers.num2}`;
     displayEquation.innerText = numbers.equation;
