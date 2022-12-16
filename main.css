@@ -1,3 +1,8 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
 body {
     box-sizing: border-box;
     background-color: black;
@@ -12,10 +17,47 @@ nav {
 }
 
 #container {
+    display: grid;
     position: absolute;
     background-color: antiquewhite;
     transform: translate(50vw, 50vh);
-    padding: 40px;
-    border-radius: 10px;
+    border-radius: 25px 25px 10px 10px;
+    grid-template-rows: 1fr 2fr;
+}
 
+header {
+    height: max-content;
+}
+
+#results {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    display: none;
+    color: whitesmoke;
+}
+
+#results.show {
+    font-size: small;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: block;
+}
+
+#results.show.correct {
+    background-color: rgb(90, 215, 80);
+}
+
+#results.show.incorrect {
+    background-color: rgb(75, 20, 10);
+}
+
+#results.correct input {
+    display: inline-block;
+}
+
+button {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
 }

@@ -13,11 +13,18 @@
 <body>
     <nav>
         <h1>The Generated Math Quiz</h1>
+        <p><b>Note</b>: Round decimals to the hundredths place.</p>
     </nav>
     <div id="container">
-        <p>What's <span id="equation"></span></p>
-        <input type="number" id="answer">
-        <button type="button">Submit</button>
+        <header id="heading">
+            <p id="results"></p>
+        </header>
+        <main>
+            <p>What's <span id="equation"></span></p>
+            <input id="answer" oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*)\./g, '$1');"
+                value="0">
+            <button type="button" onclick="submit();">Submit</button>
+        </main>
     </div>
 </body>
 
